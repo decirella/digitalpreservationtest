@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Preservation Test</title>
+    <style>
+        body {
+            font-family: "Noto Sans Mono", monospace;
+            margin: 20px;
+            width: 640px;
+        }
+        .checkbox-container {
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>THE DIGITAL PRESERVATION TEST</h1>
+    <b>- Version 1.0</b>
+    
+    <div class="section">
+        <p>Herewith a compendium of fact and folklore about digital preservation cunningly disguised as a test.</p>
+        <em>Scoring - Count 1 for each item you have done, or each question that you can answer correctly.</em>
+        <br>
+        <br>
+        <br>
+        <div id="checkboxList"></div>
+    </div>
+    
+
+    <div class="result">
+        Total: <span id="totalValue">0</span>
+    </div>
+    
+    <script>
+        function calculateSum() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let total = 0;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseInt(checkbox.value, 10);
+                }
+            });
+            document.getElementById('totalValue').innerText = total;
+        }
+    </script>
+</body>
+</html>
